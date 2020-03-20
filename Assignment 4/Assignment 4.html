@@ -1,0 +1,247 @@
+<html>
+<head>
+	<title>Assignment 4</title>
+	<style>
+		body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: Open Sans, sans serif;
+}
+
+/*the 'company' title*/
+#title {
+  text-align: center;
+  font-family: allura;
+  font-size: 50px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 2px #292929, -1px -1px 0.5px #292929;
+}
+
+#form_container {
+  width: 600px;
+  height: auto;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 5px;
+  background: #95a5a6;
+  box-shadow: 15px 15px 8px #292929;
+  position: relative;
+  z-index: 3;
+  border: none;
+}
+
+#form {
+  width: 100%;
+  height: auto;
+  margin: 30px auto;
+  /*temp*/
+  border: none;
+}
+
+/*This hiddes the labels for use only by the JS as there are placeholders in the HTML*/
+label {
+  visibility: hidden;
+}
+
+input {
+  width: calc(100% - 16px);
+  padding: 10px 0 10px 10px;
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #B2B2B2, -1px -1px 1px #292929;
+  position: relative;
+}
+input:focus {
+  outline:none;
+  border: 2px solid transparent;
+}
+
+input.isRequired {
+  border: 2px solid #e74c3c;
+}
+
+/*used a button so to easily add fontawesome's icon to the submit*/
+button {
+  border: none;
+  background: #3498db;
+  width: 80px;
+  height: 35px;
+  padding: 0;
+  margin-top: 16px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #292929, -1px -1px 1px #B2B2B2;
+  border-radius: 5px;
+  transition: all .3s;
+  color: white;
+  font-weight: 700;
+}
+button:hover {
+  background: #2980b9;
+}
+button:focus {
+  box-shadow: 1px 1px 1px #B2B2B2, -1px -1px 1px #292929;
+}
+
+/*style for the error box*/
+.errorMessages {
+  width: calc(100% - 8px);
+  padding: 20px 0;
+  background: #e74c3c;
+  color: white;
+  border: 2px solid #EC644B;
+  display: none;
+}
+.errorMessages li {
+  padding: 0 0 5px 0;
+  margin: 0 0 0 30px;
+  font-family: Open Sans, sans serif;
+}
+
+#info {
+  width: 400px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size : 25px;
+}
+
+#info h1 {
+  margin: 10px 0;
+}
+
+#info li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+#info li::before {
+  content: '\f1d9';
+  position: absolute;
+  left: 8px;
+  font:normal normal normal 14px/1 FontAwesome;
+  font-size:inherit;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+	</style>
+</head>
+<body><br><br><br>
+	<script>
+	//onblur function
+function requiredField(input) {
+    if (input.value.length < 1) {
+      //red border
+        input.style.borderColor = "#e74c3c";
+      
+    } else if (input.type == "email") {
+      console.log("this is an email type");
+      
+        if (input.value.indexOf("@") != -1 && input.value.indexOf(".") != -1) {
+          //green border
+          input.style.borderColor = "#2ecc71";
+        } else {
+          //red border
+          input.style.borderColor = "#e74c3c";
+        }
+      
+    } else {
+      //green border
+        input.style.borderColor = "#2ecc71";
+    }
+}
+var createAllErrors = function() {
+        var form = $( this ),
+            errorList = $( "ul.errorMessages", form );
+
+        var showAllErrorMessages = function() {
+            errorList.empty();
+
+            // Find all invalid fields within the form.
+            var invalidFields = form.find( ":invalid" ).each( function( index, node ) {
+
+                // Find the field's corresponding label
+                var label = $( "label[for=" + node.id + "] "),
+                    // Opera incorrectly does not fill the validationMessage property.
+                    message = node.validationMessage || 'Invalid value.';
+
+                errorList
+                    .show()
+                    .append( "<li><span>" + label.html() + "</span> " + message + "</li>" );
+            });
+        };
+
+        // Support Safari
+        form.on( "submit", function( event ) {
+            if ( this.checkValidity && !this.checkValidity() ) {
+                $( this ).find( ":invalid" ).first().focus();
+                event.preventDefault();
+            }
+        });
+
+        $( "input[type=submit], button:not([type=button])", form )
+            .on( "click", showAllErrorMessages);
+
+        $( "input", form ).on( "keypress", function( event ) {
+            var type = $( this ).attr( "type" );
+            if ( /date|email|month|number|search|tel|text|time|url|week/.test ( type )
+              && event.keyCode == 13 ) {
+                showAllErrorMessages();
+            }
+        });
+    };
+    
+    $( "form" ).each( createAllErrors );
+</script>
+ <div id="info"><br><br><br><br><br>
+    <h1><font color="orange">Check this out</font></h1>
+    <font color="white"><p>Some basic form validation border colors</p>
+    <ul>
+      <li>Red border : field is empty</li>
+      <li>Green border : filled</li>
+      <li>Checks email type field for "@" and a "."</li>
+      <li>HTML5 and Javascript takes over <br/> 
+          once submitted if there are errors</li>
+    </ul></font>
+  </div>
+
+  <div id="form_container">
+    <h2 id="title"><font color="black">Registration Form</font></h2>
+    <form id="form" action="" accept-charset="UTF-8" method="">
+      
+      <ul class="errorMessages"></ul>
+      
+      <!-- This is to provide a "name" for the js to pull from in the error report once submitted-->
+      <label for="fname">first name:</label>
+      <input id="fname" type="text" onblur="requiredField(this)" placeholder="First Name"required>
+		
+	  <label for="mname">first name:</label>
+      <input id="mname" type="text" onblur="requiredField(this)" placeholder="Middle Name"required>
+
+      <label for="lname">last name:</label>
+      <input id="lname" type="text" onblur="requiredField(this)" placeholder="Last Name"required><br/><br/>
+     
+	  <center><table border="0" width="300px"><center>
+	<tr><td><input type="radio" name="gender" id="male" value="male">Male</td>
+	   <td><input type="radio" name="gender" id="female" value="female">Female</td>
+	   <td><input type="radio" name="gender" id="other" value="other">Other</td></tr>
+	</center></table></center>
+	
+      <label for="email">email:</label>
+      <input id="email" type="email" onblur="requiredField(this)" placeholder="Email" required>
+
+      <label for="address">addaress:</label>
+      <input id="address" type="textarea" onblur="requiredField(this)" placeholder="Address" required>
+      
+      <button type="submit">
+        <span>submit <i class="fa fa-bolt"></i></span>
+      </button>
+    </form>
+  </div>
+</body>
