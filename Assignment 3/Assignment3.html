@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Blog</title>
+        <link href="My page.css" rel="stylesheet">
+        <style>
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Handlee', cursive;
+    font-size: 13pt;
+    background-image:url("https://cdn.pixabay.com/photo/2017/02/16/19/47/bokeh-2072271_960_720.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding: 10px;
+    margin: 0;
+}
+h1 {
+    font-size: 15pt;
+    color: #DD4525;
+    text-align: center;
+    padding: 18px 0 18px 0;
+    margin: 0 0 10px 0;
+}
+h1 span {
+    border: 4px dotted #904738;
+    padding: 10px;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+.img-circle {
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.section {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+#header {
+    background-image: url("https://cdn.pixabay.com/photo/2017/03/25/17/55/color-2174045_960_720.png");
+    background-size: cover;
+}
+#header img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+#header p {
+    font-size: 25pt;
+    color: #3b464c;
+    padding-top: 5px;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+.quote {
+    font-size: 12pt;
+    text-align: right;
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+    font-size: 11pt;
+}
+table, th, td {
+    border: 2px solid #cecece;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+.selected {
+    background-color: #DD4525;
+    font-weight: bold;
+    color: white;
+}
+li {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+progress {
+    width: 70%;
+    height: 20px;
+    color: #904738;
+    background: #efefef;
+}
+progress::-webkit-progress-bar {
+    background: #efefef;
+}
+progress::-webkit-progress-value {
+    background: #904738;
+} 
+progress::-moz-progress-bar {
+    color: #3fb6b2;
+    background: #efefef;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #f36f48;
+}
+form {
+    text-align: center;
+    margin-top: 0;
+}
+.submit {
+    background-color: #DD4525;
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    margin: 0;
+    font-weight: bold;
+}
+.submit:hover {
+    background-color: #904738;
+}
+textarea {
+    height: 100px;
+}
+input, textarea {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    padding: 15px 10px 10px;
+    border: 1px solid #cecece;
+    background-color: #efefef;
+    color: #787575;
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+</style>
+<script>
+    function hello(){
+        alert("Welcome to mypage buddy!!!!!!!");
+    }
+</script>
+</head>
+    
+    <body onLoad="javascript:hello()">
+        <!-- header start -->
+        <div id="header" class="section">
+            <img alt="" class="img-circle" src="SKETCH.jpg">
+            <p>DAX BHAVDIPKUMAR PATEL</p>
+        </div>
+        <!-- header end -->
+        
+        <!-- About Me section start -->
+        <div class="section">
+            <h1><span>About Me</span></h1>
+            <p>
+                Hey I'm <strong>Dax</strong>.Just wanna say that coding has changed my life. It's not just about apps. Learning to code gave me <b>problem-solving skills</b> and a way to communicate with others on a technical level. I can also develop websites and use my coding skills to get a better job. And I learned it all at <strong>Alone</strong>.
+            </p>
+            <p class="quote">"-JAY SWAMINARAYAN."</p>
+        </div>
+        <!-- About Me section end -->
+        
+        <!-- My Schedule section start -->
+        <div class="section">
+            <h1><span>My Schedule</span></h1>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                </tr>
+                <tr>
+                    <td>8-3</td>
+                    <td class="selected">Classes</td>
+                    <td class="selected">Classes</td>
+                    <td class="selected">Classes</td>
+                    <td class="selected">Classes</td>
+                    <td class="selected">Classes</td>
+                    <td class="selected">Classes</td>
+                    <td class="selected">Sleeping-Playing</td>
+                </tr>
+                <tr>
+                    <td>3:30-6</td>
+                    <td class="selected">Coding</td>
+                    <td class="selected">Coding</td>
+                    <td class="selected">Coding</td>
+                    <td class="selected">Coding</td>
+                    <td class="selected">Coding</td>
+                    <td class="selected">Coding</td>
+                    <td class="selected">Playing</td>
+                </tr>
+                <tr>
+                    <td>9-2am</td>
+                    <td class="selected">Working</td>
+                    <td class="selected">Working</td>
+                    <td class="selected">Working</td>
+                    <td class="selected">Working</td>
+                    <td class="selected">Working</td>
+                    <td class="selected">Working</td>
+                    <td class="selected">Working</td>
+                </tr>
+                <tr>
+                    <td>7am-8am</td>
+                    <td class="selected">Studying</td>
+                    <td class="selected">Studying</td>
+                    <td class="selected">Studying</td>
+                    <td class="selected">Studying</td>
+                    <td class="selected">Studying</td>
+                    <td class="selected">Studying</td>
+                    <td class="selected">Studying</td>
+                </tr>
+            </table>
+        </div>
+        <!-- My Schedule section end -->
+                
+        <!-- My Skills section start -->
+        <div class="section">
+            <h1><span>My Skills</span></h1>
+            <ul>
+                <li>HTML <br />
+                    <progress min="0" max="100" value="100"></progress>
+                </li>
+                <li>CSS <br />
+                    <progress min="0" max="100" value="90"></progress>
+                </li>
+                <li>JavaScript <br />
+                    <progress min="0" max="100" value="80"></progress>
+                </li>
+                <li>PHP<br />
+                    <progress min="0" max="100" value="70"></progress>
+                </li>
+                <li>Bootstrap<br />
+                    <progress min="0" max="100" value="60"></progress>
+                </li>
+                <li>AngularJS<br />
+                    <progress min="0" max="100" value="70"></progress>
+                </li>
+                  <li>NodeJS<br />
+                    <progress min="0" max="100" value="50"></progress>
+                </li>
+            </ul>
+        </div>
+        <!-- My Skills section end -->
+                
+        <!-- Form section start -->
+       <div class="section">
+            <h1><span>Contact Me</span></h1>         
+            <form action="mailto:18ce070@charusat.edu.in" method="get">
+                <input name="name" placeholder="Name" type="text" required /><br/>
+                <input name="email" placeholder="Email" type="email" required /><br/>
+                <textarea name="message" placeholder="Message" required ></textarea>
+                <input type="SUBMIT" value="SEND" class="submit" />
+            </form>
+        </div>
+        <!-- Form section end -->
+
+        <div class="section">
+           <center><img src="https://upload.wikimedia.org/wikipedia/en/d/d3/Biography_tv_series_logo.png"></center>
+        </div>
+    </body>
+</html>
