@@ -1,0 +1,122 @@
+<html>
+<head>
+  <title></title>
+  <STYLE>
+    body{
+      background-color:black;
+    }
+    font{
+      font-size: 40px;
+    }
+    h2,h3,table{
+      color:white;
+    }
+    header{
+      background-color:blue;
+    }
+  </STYLE>
+</head>
+<body>
+   <header>
+    <center><font color="white">National Workshop on Web Technology</font></center></header>
+   <marquee><h2><font color="orange">Register for a Workshop now....</font></h2></marquee>
+<center>
+<table width="900px">
+<tr><td>
+  <h1><font color="orange">Venue of workshop:</font><br/></h1>
+<h2>Date = 01/04/2020 (Wednesday) <br/>
+  Location:726-B (A7 Building)<br/><br/>
+  CHARUSAT Campus, Highway 139,<br/>
+       Nadiad - Petlad Road, Changa,<br/>
+        Gujarat 388421.<br/><br/>
+      <img length="100px" width=150px src="logo.PNG">
+  </h2>
+</td><td>
+
+<form action="insert.php" method="POST">
+
+<table cellpadding="2" width="400px" height="600px" bgcolor="grey" align="center" cellspacing="2">
+
+<tr><td colspan=3>
+  <center><font size=6 color="black"><b>Registration Form</b></font></center>
+  </td></tr>
+
+
+<tr><td>Name</td>
+  <td><input type=text name=textnames id="textname" size="30"></td>
+  </tr>
+
+<tr>
+  <td>Gender</td>
+  <td><input type="radio" name="sex" value="male" size="10">Male
+  <input type="radio" name="sex" value="Female" size="10">Female</td>
+  </tr>
+
+<tr>
+  <td>Branch</td>
+  <td><select name="course">
+  <option value="-1" selected>select..</option>
+  <option value="B.Tech">B.TECH</option>
+  <option value="MCA">MCA</option>
+  <option value="MBA">MBA</option>
+  <option value="BCA">BCA</option>
+  </select></td>
+  </tr>
+
+<tr>
+  <td>Personal Address</td>
+  <td><input type="text" name="personaladdress"
+  id="personaladdress" size="30"></td>
+  </tr>
+
+<tr>
+  <td>State</td>
+  <td><select Name="state">
+  <option value="-1" selected>select..</option>
+  <option value="New Delhi">NEW DELHI</option>
+  <option value="Mumbai">MUMBAI</option>
+  <option value="Goa">GOA</option>
+  <option value="Bihar">BIHAR</option>
+  <option value="Bihar">GUJARAT</option>
+  </select></td>
+  </tr>
+
+<tr>
+  <td>PinCode</td>
+  <td><input type="text" name="pincode" id="pincode" size="30"></td>
+</tr>
+
+
+<tr>
+  <td>person category</td>
+  <td><input type="radio" name="personcategory" value="collage student" size="10">Collage student
+  <input type="radio" name="personcategory" value="faculty member" size="10">Faculty<br/>
+<input type="radio" name="personcategory" value="company employee" size="10">Company Employee
+<input type="radio" name="personcategory" value="others" size="10">others</td>
+  </tr>
+
+<tr>
+  <td>EmailId</td>
+  <td><input type="text" name="emailid" id="emailid" size="30"></td>
+</tr>
+
+<tr>
+  <td>Date Of Birth</td>
+  <td><input type="date" name="dob" id="dob" size="30"></td>
+  </tr>
+
+<tr>
+  <td>MobileNo</td>
+  <td><input type="text" name="mobileno" id="mobileno" size="30"></td>
+  </tr>
+
+<tr>
+  <td><input type="reset"></td>
+  <td colspan="2"><input type="submit" value="Submit Form" /></td>
+  </tr>
+  </table>
+</form>
+</center>
+</td></tr></table>
+</body>
+</html>   
